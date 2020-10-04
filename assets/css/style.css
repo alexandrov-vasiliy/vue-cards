@@ -1,0 +1,33 @@
+/*стили*/
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    max-width: 400px;
+    margin-top: 20px;
+}
+img{
+    max-width: 100%;
+}
+.add-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-img{
+
+    max-width: 100%;
+}
+.banner{
+    height: 60vh;
+    width: 100vw;
+}
+.dell{
+    float:right;
+}
+form{
+    margin-top: 60px;
+}

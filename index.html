@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="assets/js/vue.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="app">
+        <img src="assets/image/bg.jpg" class="banner" alt="">
+        <div class="card-container">
+            <div v-for="card in cards" class="card"  style="width: 18rem; ">
+
+                <div class="card-body">
+                    <a href="#" @click="deleteCard(card.id)" class="btn dell btn-danger">&times; <!--это крестик для удаления--> </a>
+                    <h5 class="card-title">{{card.name}}</h5>
+                    <p class="card-text">{{card.description}}</p>
+
+
+                </div>
+                <img :src="card.src"  alt="" class="card-img card-img-bot">
+            </div>
+        </div>
+        <div class="add-card">
+            <form>
+                <input type="file" class="form-control" id="input-file" @change="ImageBased(this)">
+                <div class="form-group">
+                    <label  for="input-name">Имя</label>
+                    <input v-model="cardNameInput"  class="form-control" type="text" id="input-name">
+                </div>
+                <div class="form-group">
+                    <label for="input-description">Описание</label>
+                    <input v-model="cardDescriptionInput"  class="form-control" type="text" id="input-description">
+                </div>
+
+                <button @click.prevent="addCard">добавить карточку</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
+<script src="assets/js/index.js">
+
+</script>
